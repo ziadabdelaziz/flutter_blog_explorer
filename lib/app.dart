@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_blog_explorer/logic/blogs_bloc/blogs_bloc.dart';
-import 'package:flutter_blog_explorer/presentation/pages/home_page.dart';
+import 'package:flutter_blog_explorer/presentation/navigation/router.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -10,13 +10,13 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocProvider(
       create: (context) => BlogsBloc(),
-      child: MaterialApp(
+      child: MaterialApp.router(
         title: 'Flutter Demo',
+        debugShowCheckedModeBanner: false,
         theme: ThemeData(
-          colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
           useMaterial3: true,
         ),
-        home: const MyHomePage(),
+        routerConfig: router,
       ),
     );
   }
