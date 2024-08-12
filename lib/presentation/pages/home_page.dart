@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_blog_explorer/logic/blogs_bloc/blogs_bloc.dart';
 import 'package:flutter_blog_explorer/presentation/widgets/blog_preview.dart';
+import 'package:go_router/go_router.dart';
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key});
@@ -22,7 +23,8 @@ class _MyHomePageState extends State<MyHomePage> {
         ),
         actions: [
           IconButton(
-            onPressed: () {},
+            onPressed: () {
+            },
             icon: Icon(
               Icons.favorite_border_outlined,
               color: Colors.grey[600],
