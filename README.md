@@ -1,16 +1,54 @@
-# flutter_blog_explorer
+# Flutter Blog Explorer
 
-A new Flutter project.
+## Architecture
 
-## Getting Started
+### Requirements
+1. **Blog List View:** each blog has title and image
+2. **Blog Details Screen**
+3. **Navigation**
+4. **Favorite**
+5. **Utilize Bloc**
+6. **Error Handling:** handle API unavailable or return error by displaying a friendly error message to the user.
+7. **UI/UX Design**
+8. **Offline Mode:** storing blogs on the device with SQLite.
 
-This project is a starting point for a Flutter application.
+### Models
+**Blog:**
+1. id
+2. title
+3. image_url
+4. isFavorite
 
-A few resources to get you started if this is your first Flutter project:
+### Data Provider
+1. BlogsAPI
+* fetchBlogs
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+2. BlogsCache
+* getAllBlogs
+* getFavoriteBlogs
+* saveBlogs
+* toggleFavorite
+* isFavorite
+* hasBlogs
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+### Repository
+1. BlogsRepository
+* getBlogs
+* toggleFavorite
+
+### Business Logic
+1. BlogsBloc
+
+**States:**
+* BlogsLoadingState
+* BlogsReadyState
+* BlogsErrorState
+
+**Events:**
+* LoadBlogs
+* ToggleFavoriteBlog
+
+### Screens
+1. Blogs List
+2. Blog Details
+3. Favorite Blogs
